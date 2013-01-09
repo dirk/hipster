@@ -12,7 +12,7 @@ module Hipster
         if attrs.has_key? term
           var = attrs[term]
         elsif attrs.has_key? term.to_sym
-          var = attrs[term]
+          var = attrs[term.to_sym]
         else
           var = nil
         end
