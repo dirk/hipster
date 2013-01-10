@@ -1,20 +1,6 @@
 # Hipster
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'hipster'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hipster
+Hipster extracts interesting metadata from URLs. It knew about that website before it was cool.
 
 ## Usage
 
@@ -27,3 +13,10 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## To-Do
+
+- [ ] Add Open Graph container
+- [ ] Add Open Graph to parsing systems
+- [ ] Finish Dublin Core parsing of IMDb
+- [ ] Wikipedia parser
