@@ -1,3 +1,5 @@
+require 'date'
+
 module Hipster
   module Parser
     class IMDb < Base
@@ -8,8 +10,8 @@ module Hipster
         @response = nil
         @html = nil
       end
-      def self.new_from_data(data)
-        imdb = self.new(nil)
+      def self.new_from_data(url, data)
+        imdb = self.new(url)
         imdb.html = Nokogiri::HTML(data)
         imdb
       end
@@ -21,7 +23,17 @@ module Hipster
       end
       def to_dc
         Hipster::DublinCore.new(
-          :title => title
+          :title => title,
+          :description => description,
+          :date => date,
+          :creator => creator,
+          :type => 'movie',
+          :identifier => @url,
+          :source => @url,
+          :rights => 'http://www.imdb.com/help/show_article?conditions',
+          :meta => {
+            :parser => :imdb
+          }
         )
       end
       
@@ -33,6 +45,19 @@ module Hipster
         else
           header.children.select(&:text?).first.text.strip
         end
+      end
+      
+      def description
+        @html.css('p[itemprop="description"]').first.text.strip
+      end
+      
+      def date
+        text = @html.css('time[datetime][itemprop="datePublished"]').first['datetime']
+        Date.strptime(text, '%Y-%m-%d')
+      end
+      
+      def creator
+        @html.css('a[itemprop="director"]').first.text.strip
       end
       
     end

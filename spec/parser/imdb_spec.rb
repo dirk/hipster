@@ -11,7 +11,10 @@ describe Hipster::Parser::IMDb do
     ))
     movie_data = File.read(movie_data_file)
     # @parser = Hipster::Parser::IMDb.new(@movie_url)
-    @parser = Hipster::Parser::IMDb.new_from_data(movie_data)
+    @parser = Hipster::Parser::IMDb.new_from_data(
+      'http://www.imdb.com/title/tt1853728/',
+      movie_data
+    )
     @parser_fetch_result = @parser.fetch!
     @dc = @parser.to_dc
   end
@@ -24,6 +27,24 @@ describe Hipster::Parser::IMDb do
   end
   it "should have the right title" do
     @dc.title.should == 'Django Unchained'
+  end
+  it "should have a description" do
+    @dc.description.should_not be_empty
+  end
+  it "should have the right date" do
+    @dc.date.should == Date.new(2012, 12, 25)
+  end
+  it "should be the movie type" do
+    @dc.type.should == 'movie'
+  end
+  it "should have the right creator" do
+    @dc.creator.should == 'Quentin Tarantino'
+  end
+  it "should have the right identifier" do
+    @dc.identifier.should == 'http://www.imdb.com/title/tt1853728/'
+  end
+  it "should have the right meta parser" do
+    @dc.meta[:parser].should == :imdb
   end
 end
 
