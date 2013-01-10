@@ -6,6 +6,7 @@ module Hipster
       'subject', 'title', 'type'
     ]
     attr_accessor *TERMS.map(&:to_sym)
+    attr_accessor :meta
     
     def initialize(attrs = {})
       TERMS.each do |term|
@@ -18,6 +19,7 @@ module Hipster
         end
         self.instance_variable_set(('@'+term).to_sym, var)
       end
+      @meta = (attrs[:meta] || {})
     end
     
   end

@@ -16,4 +16,8 @@ describe Hipster::DublinCore do
       dc.send(term.to_sym).should be_nil
     end
   end
+  it "should have empty meta" do
+    dc = Hipster::DublinCore.new
+    dc.meta.should == {}
+  end
 end
