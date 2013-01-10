@@ -37,6 +37,19 @@ module Hipster
         )
       end
       alias :to_dc :to_dublin_core
+      def to_open_graph
+        Hipster::Object::OpenGraph.new(
+        # Mandatory
+        :title => title,
+        :type => 'video',
+        :image => nil,
+        :url => @url,
+        # Optional
+        :site_name => 'IMDb',
+        :description => description
+        )
+      end
+      alias :to_og :to_open_graph
       
       private
       def title
