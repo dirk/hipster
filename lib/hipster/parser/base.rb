@@ -5,6 +5,9 @@ module Hipster
       def initialize(url)
         @url = url
       end
-    end
-  end
-end
+      def to_dc
+        Hipster::DublinCore.new
+      end
+    end#Base
+  end#Parser
+end#Hipster
