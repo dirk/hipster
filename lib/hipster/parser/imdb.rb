@@ -21,8 +21,8 @@ module Hipster
         @html = Nokogiri::HTML(response.body)
         self
       end
-      def to_dc
-        Hipster::DublinCore.new(
+      def to_dublin_core
+        Hipster::Object::DublinCore.new(
           :title => title,
           :description => description,
           :date => date,
@@ -36,6 +36,7 @@ module Hipster
           }
         )
       end
+      alias :to_dc :to_dublin_core
       
       private
       def title

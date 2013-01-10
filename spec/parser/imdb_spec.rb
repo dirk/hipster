@@ -23,7 +23,7 @@ describe Hipster::Parser::IMDb do
     @parser_fetch_result.should_not be_nil
   end
   it "should return a DublinCore resource" do
-    @dc.should be_an_instance_of(Hipster::DublinCore)
+    @dc.should be_an_instance_of(Hipster::Object::DublinCore)
   end
   it "should have the right title" do
     @dc.title.should == 'Django Unchained'
