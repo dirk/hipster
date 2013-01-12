@@ -16,8 +16,8 @@ describe Hipster::Parser::IMDb do
       movie_data
     )
     @parser_fetch_result = @parser.fetch!
-    @dc = @parser.to_dc
-    @og = @parser.to_og
+    @dc = @parser.to_dublin_core
+    @og = @parser.to_open_graph
   end
   
   it "should fetch the page" do

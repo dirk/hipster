@@ -36,7 +36,6 @@ module Hipster
           }
         )
       end
-      alias :to_dc :to_dublin_core
       def to_open_graph
         Hipster::Object::OpenGraph.new(
         # Mandatory
@@ -49,7 +48,6 @@ module Hipster
         :description => description
         )
       end
-      alias :to_og :to_open_graph
       
       private
       def title
