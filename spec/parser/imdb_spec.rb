@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Hipster::Parser::IMDb do
   before :all do
     # Django Unchained :P
-    # movie_url = 'http://www.imdb.com/title/tt1853728/'
+    @movie_url = 'http://www.imdb.com/title/tt1853728/'
     # Load in cached copy of URL (as of 8 Jan. 2013) instead of redownloading
     # ever test run.
     movie_data_file = File.expand_path(File.join(
@@ -12,7 +12,7 @@ describe Hipster::Parser::IMDb do
     movie_data = File.read(movie_data_file)
     # @parser = Hipster::Parser::IMDb.new(@movie_url)
     @parser = Hipster::Parser::IMDb.new_from_data(
-      'http://www.imdb.com/title/tt1853728/',
+      @movie_url,
       movie_data
     )
     @parser_fetch_result = @parser.fetch!
@@ -46,8 +46,8 @@ describe Hipster::Parser::IMDb do
     @dc.creator.should == 'Quentin Tarantino'
   end
   it "should have the right identifier" do
-    @dc.identifier.should == 'http://www.imdb.com/title/tt1853728/'
-    @og.url.should == 'http://www.imdb.com/title/tt1853728/'
+    @dc.identifier.should == @movie_url
+    @og.url.should == @movie_url
   end
   it "should have the right meta parser" do
     @dc.meta[:parser].should == :imdb
