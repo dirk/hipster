@@ -5,7 +5,7 @@ module Hipster
       OPTIONAL_PROPERTIES = ['site_name', 'description']
       attr_accessor *MANDATORY_PROPERTIES.map(&:to_sym)
       attr_accessor *OPTIONAL_PROPERTIES.map(&:to_sym)
-    
+      
       def initialize(attrs = {})
         attr_defaulter = Proc.new {|term|
           if attrs.has_key? term
@@ -20,7 +20,7 @@ module Hipster
         MANDATORY_PROPERTIES.each &attr_defaulter
         OPTIONAL_PROPERTIES.each &attr_defaulter
       end
-    
+      
     end#OpenGraph
   end#Object
 end#Hipster
