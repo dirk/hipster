@@ -1,0 +1,1 @@
+be rspec spec/parser/*_spec.rb -fdoc

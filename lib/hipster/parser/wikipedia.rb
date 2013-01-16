@@ -2,15 +2,19 @@
 module Hipster
   module Parser
     class Wikipedia < Base
-      attr_accessor :html
+      DEFAULT_OPTIONS = {
+        :hint => nil
+      }
+      attr_accessor :html, :opts
       
-      def initialize(url)
+      def initialize(url, _opts = {})
         super(url)
         @response = nil
         @html = nil
+        @opts = DEFAULT_OPTIONS.merge(_opts)
       end
-      def self.new_from_data(url, data)
-        obj = self.new(url)
+      def self.new_from_data(url, data, opts = {})
+        obj = self.new(url, opts)
         obj.html = Nokogiri::XML(data)
         obj
       end
@@ -24,9 +28,9 @@ module Hipster
         Hipster::Object::DublinCore.new(
           :title => title,
           :description => description,
-          #:date => date,
-          #:creator => creator,
-          #:type => 'movie',
+          :date => date,
+          :creator => creator,
+          :type => dc_type,
           :identifier => @url,
           :source => @url,
           :rights => 'http://wikimediafoundation.org/wiki/Terms_of_Use',
@@ -39,7 +43,7 @@ module Hipster
         Hipster::Object::OpenGraph.new(
         # Mandatory
         :title => title,
-        #:type => 'video',
+        :type => og_type,
         #:image => nil,
         :url => @url,
         # Optional
@@ -55,6 +59,38 @@ module Hipster
       
       def description
         @html.css('#mw-content-text p').first.text
+      end
+      
+      def dc_type
+        if opts[:hint] == :movie
+          'movie'
+        else
+          nil
+        end
+      end
+      def og_type
+        if opts[:hint] == :movie
+          'video'
+        else
+          nil
+        end
+      end
+      
+      def creator
+        if opts[:hint] == :movie
+          directed_by = @html.css('#mw-content-text table.infobox tr th').select {|th| th.text.strip == 'Directed by' }.first
+          if directed_by
+            directed_by.next_element.text
+          else
+            nil
+          end
+        else
+          nil
+        end
+      end
+      
+      def date
+        Date.parse(@html.css('#mw-content-text table.infobox span.published').first.text)
       end
       
       # def date
