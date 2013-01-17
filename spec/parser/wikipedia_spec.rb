@@ -17,14 +17,10 @@ describe Hipster::Parser::Wikipedia do
         movie_data,
         :hint => :movie
       )
-      @parser_fetch_result = @parser.fetch!
       @dc = @parser.to_dublin_core
       @og = @parser.to_open_graph
     end
   
-    it "should fetch the page" do
-      @parser_fetch_result.should_not be_nil
-    end
     it "should return the right resources" do
       @dc.should be_an_instance_of(Hipster::Object::DublinCore)
       @og.should be_an_instance_of(Hipster::Object::OpenGraph)
