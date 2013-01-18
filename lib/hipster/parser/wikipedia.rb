@@ -44,7 +44,7 @@ module Hipster
         # Mandatory
         :title => title,
         :type => og_type,
-        #:image => nil,
+        :image => image,
         :url => @url,
         # Optional
         :site_name => 'Wikipedia',
@@ -72,7 +72,7 @@ module Hipster
         if opts[:hint] == :movie
           'video'
         else
-          nil
+          'website'
         end
       end
       
@@ -91,6 +91,23 @@ module Hipster
       
       def date
         Date.parse(@html.css('#mw-content-text table.infobox span.published').first.text)
+      end
+      
+      def image
+        img = @html.css('#mw-content-text img').first
+        if img
+          ensure_protocol(img.attribute('src'))
+        else
+          nil
+        end
+      end
+      
+      # http://stackoverflow.com/questions/7908598/add-https-to-url-if-its-not-there
+      def ensure_protocol(url)
+        unless url[/^http:/] || url[/^https:/]
+          return 'http:' + url
+        end
+        return url
       end
       
     end

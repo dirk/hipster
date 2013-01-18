@@ -51,6 +51,10 @@ describe Hipster::Parser::Wikipedia do
       @dc.meta[:parser].should == :wikipedia
       @og.site_name.should == 'Wikipedia'
     end
+    it "should have an image" do
+      @og.image.should_not be_nil
+    end
+    
   end#context movie
   
 end#describe
