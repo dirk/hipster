@@ -6,7 +6,7 @@ require 'hipster/version'
 Gem::Specification.new do |gem|
   gem.name          = "hipster"
   gem.version       = Hipster::VERSION
-  gem.authors       = ["Dirk Gadsden"]
+  gem.authors       = ["Dirk Gadsden", "Thomas Cannon"]
   gem.email         = ["dirk@esherido.com"]
   gem.description   = %q{TODO: Write a gem description}
   gem.summary       = %q{TODO: Write a gem summary}

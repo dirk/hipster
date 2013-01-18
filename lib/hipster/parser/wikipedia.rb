@@ -93,15 +93,6 @@ module Hipster
         Date.parse(@html.css('#mw-content-text table.infobox span.published').first.text)
       end
       
-      # def date
-      #   text = @html.css('time[datetime][itemprop="datePublished"]').first['datetime']
-      #   Date.strptime(text, '%Y-%m-%d')
-      # end
-      # 
-      # def creator
-      #   @html.css('a[itemprop="director"]').first.text.strip
-      # end
-      
     end
   end
 end
