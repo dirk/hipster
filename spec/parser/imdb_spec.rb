@@ -78,7 +78,7 @@ describe Hipster::Parser::IMDb do
   end
 
   it "should return the top keywords and genres for subject (DC only)" do
-    @dc.subject.should == ["Plantation", "Slave", "Dentist", "Rescue", "Bounty Hunter"]
+    @dc.subject.sort.should == ["Slave", "Plantation", "Bounty Hunter", "Dentist", "Rescue", "Action", "Drama", "Western"].sort
   end
 
 end

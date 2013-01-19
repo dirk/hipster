@@ -35,7 +35,7 @@ module Hipster
           :format => duration,
           :relation => imdb_id,
           :publisher => publisher,
-          :subject => keywords,
+          :subject => keywords + genres,
           :language => 'en-US', # TODO: Language detection
           :meta => {
             :parser => :imdb
@@ -101,6 +101,14 @@ module Hipster
         h4 = @html.css('h4').select {|h4| h4.text.strip.downcase == 'plot keywords:' }.first
         if h4
           h4.parent.children.css('a').select {|a| a['href'] =~ /\/keyword\/.+/ }.map {|a| a.text.strip }
+        else
+          []
+        end
+      end
+      def genres
+        h4 = @html.css('h4').select {|h4| h4.text.strip.downcase == 'genres:' }.first
+        if h4
+          h4.parent.children.css('a').select {|a| a['href'] =~ /\/genre\/.+/ }.map {|a| a.text.strip }
         else
           []
         end
