@@ -10,37 +10,36 @@ TODO: Write usage instructions here
 ## Items to Complete:
 
 * IMDB Parser.
-	* IMDB Parser still needs to handle the following fields:
-		* DublinCore
-			* contributor
-			* coverage (Not applicable?)
-			* format (length)
-	        * language
-	        * publisher
-	        * relation
-	        * rights
-	        * source
-	        * subject
-	    * Open Graph
-	    	* image
+  * IMDB Parser still needs to handle the following fields:
+    * DublinCore
+      * contributor
+      * coverage (Not applicable?)
+      * format (length)
+      * language
+      * publisher
+      * relation
+      * rights
+      * source
+      * subject
+    * Open Graph
+      * image
 * Wikipedia Parser
-	* Wikipedia Parser still needs to handle the following fields:
-		* contributor
-		* coverage
-		* format
-		* language
-		* publisher
-		* relation
-		* rights
-		* source
-		* subject
-
+  * Wikipedia Parser still needs to handle the following fields:
+    * contributor
+    * coverage
+    * format
+    * language
+    * publisher
+    * relation
+    * rights
+    * source
+    * subject
 * Media Types that still need to be considered:
-	* Television
-		* Need to determine what to do about television episodes
-	* Books
-	* Music
-	* Videogames (MobyGames?)
+  * Television
+    * Need to determine what to do about television episodes
+  * Books
+  * Music
+  * Videogames (MobyGames?)
 * Write more test cases (different types of media/titles)
 
 ## Contributing
