@@ -6,6 +6,21 @@ Hipster extracts interesting metadata from URLs. It knew about that website befo
 
 TODO: Write usage instructions here
 
+
+## Items to Complete:
+
+* IMDB Parser.
+	* IMDB Parser still needs to handle the following fields:
+		* contributor
+		* coverage (Not applicable?)
+		* format
+        * language
+        * publisher
+        * relation
+        * rights
+        * source
+        * subject
+
 ## Contributing
 
 1. Fork it
