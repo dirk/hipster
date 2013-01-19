@@ -49,5 +49,36 @@ describe Hipster::Parser::IMDb do
     @dc.meta[:parser].should == :imdb
     @og.site_name.should == 'IMDb'
   end
+
+  it "should have the right contributor (dublin core only)" do
+    @dc.contributor.should == :imdb
+  end
+
+  it "should have the length in minutes (format in dc, duration in og)" do
+    @dc.format.should == 165
+    @og.duration.should == 165
+  end
+
+  it "should have the proper location (language and territory)" do
+    @dc.language.should == "en-US"
+    @og.locale.should == "en_US"
+  end
+
+  it "should have the right publisher. Note that this is the first credited production company (DublinCore only)" do
+    @dc.publisher.should == "Weinstein Company, The"
+  end
+
+  it "should have the right relation, which is the IMDb ID (DublinCore only)" do
+    @dc.relation.should == "tt1853728"
+  end
+
+  it "should return the IMDb URL for the source (DublinCore Only)" do
+    @dc.source.should == @movie_url
+  end
+
+  it "should return the top keywords and genres for subject (DublinCore Only)" do
+    @dc.subject.should == ["Slave", "Plantation", "Bounty Hunter", "Dentist", "Rescue", "Action", "Drama", "Western"]
+  end
+
 end
 
