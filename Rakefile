@@ -25,7 +25,7 @@ namespace :test do
     response = HTTParty.get('http://en.wikipedia.org/wiki/Django_Unchained')
     data = Nokogiri::HTML(response.body)
     file = File.expand_path(File.join(
-      parser_data_directory, 'wikipedia_django_unchained.html '
+      parser_data_directory, 'wikipedia_django_unchained.html'
     ))
     File.open(file, 'w') {|f| f.write(data) }
     puts 'Done'
