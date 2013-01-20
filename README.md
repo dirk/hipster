@@ -23,6 +23,10 @@ TODO: Write usage instructions here
 	        * subject
 	    * Open Graph
 	    	* image
+	    * Misc:
+	    	* Actors (key/value pair of Actor Name => Roles)
+	    	* Episodes (for television series). Do We break these down by season, or just list them all as a giant array?
+	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
 * Wikipedia Parser
 	* Wikipedia Parser still needs to handle the following fields:
 		* contributor
@@ -42,6 +46,7 @@ TODO: Write usage instructions here
 	* Music
 	* Videogames (MobyGames?)
 * Write more test cases (different types of media/titles)
+* Double check our metadata types. I think OG is lacking some of the more detailed ones.
 
 ## Contributing
 
