@@ -2,7 +2,7 @@ module Hipster
   module Object
     class OpenGraph < Base
       MANDATORY_PROPERTIES = ['title', 'type', 'image', 'url']
-      OPTIONAL_PROPERTIES = ['site_name', 'description']
+      OPTIONAL_PROPERTIES = ['site_name', 'description', 'locale']
       attr_accessor *MANDATORY_PROPERTIES.map(&:to_sym)
       attr_accessor *OPTIONAL_PROPERTIES.map(&:to_sym)
       
