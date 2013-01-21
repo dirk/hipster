@@ -9,7 +9,7 @@ TODO: Write usage instructions here
 
 ## Items to Complete:
 
-* IMDB Parser.
+* IMDB Parser
   * IMDB Parser still needs to handle the following fields:
     * DublinCore
       * contributor
@@ -23,24 +23,30 @@ TODO: Write usage instructions here
       * <del>subject</del>
     * Open Graph
       * image
+    * Misc:
+    	* Actors (key/value pair of Actor Name => Roles)
+    	* Episodes (for television series). Do We break these down by season, or just list them all as a giant array?
+    		* URL to start with: http://www.imdb.com/title/tt0436992/episodes
+	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
 * Wikipedia Parser
-  * Wikipedia Parser still needs to handle the following fields:
-    * contributor
-    * coverage
-    * format
-    * language
-    * publisher
-    * relation
-    * rights
-    * source
-    * subject
+	* Wikipedia Parser still needs to handle the following fields:
+		* contributor
+		* coverage
+		* format
+		* language
+		* publisher
+		* relation
+		* rights
+		* source
+		* subject
 * Media Types that still need to be considered:
-  * Television
-    * Need to determine what to do about television episodes
-  * Books
-  * Music
-  * Videogames (MobyGames?)
+	* Television
+		* Need to determine what to do about television episodes
+	* Books
+	* Music
+	* Videogames (MobyGames?)
 * Write more test cases (different types of media/titles)
+* Double check our metadata types. I think OG is lacking some of the more detailed ones.
 
 ## Contributing
 
