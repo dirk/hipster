@@ -14,13 +14,13 @@ TODO: Write usage instructions here
     * DublinCore
       * contributor
       * coverage (Not applicable?)
-      * format (length)
+      * <del>format</del> (length)
       * language
-      * publisher
-      * relation
-      * rights
+      * <del>publisher</del>
+      * <del>relation</del>
+      * <del>rights</del>
       * source
-      * subject
+      * <del>subject</del>
     * Open Graph
       * image
 * Wikipedia Parser
