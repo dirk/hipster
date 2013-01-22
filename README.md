@@ -28,6 +28,7 @@ TODO: Write usage instructions here
     	* Episodes (for television series). Do We break these down by season, or just list them all as a giant array?
     		* URL to start with: http://www.imdb.com/title/tt0436992/episodes
 	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
+  * Maybe used their JSON API? https://github.com/richardasaurus/imdb-pie
 * Wikipedia Parser
 	* Wikipedia Parser still needs to handle the following fields:
 		* contributor
