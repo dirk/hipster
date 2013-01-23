@@ -38,6 +38,7 @@ module Hipster
           :relation => wikipedia_id,
           :subject => categories,
           :format => duration,
+          :contributor => :wikipedia,
           :meta => {
             :parser => :wikipedia
           }
@@ -45,14 +46,14 @@ module Hipster
       end
       def to_open_graph
         Hipster::Object::OpenGraph.new(
-        # Mandatory
-        :title => title,
-        :type => og_type,
-        :image => image,
-        :url => @url,
-        # Optional
-        :site_name => 'Wikipedia',
-        :description => description
+          # Mandatory
+          :title => title,
+          :type => og_type,
+          :image => image,
+          :url => @url,
+          # Optional
+          :site_name => 'Wikipedia',
+          :description => description
         )
       end
       

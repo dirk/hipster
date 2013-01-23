@@ -66,6 +66,9 @@ describe Hipster::Parser::Wikipedia do
     it "should have the length in minutes (format in DC, duration in OG)" do
       @dc.format.should == 165
     end
+    it "should have the right contributor (DC only)" do
+      @dc.contributor.should == :wikipedia
+    end
     
   end#context movie
   

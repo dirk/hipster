@@ -11,7 +11,7 @@ TODO: Write usage instructions here
 * IMDB Parser
   * IMDB Parser still needs to handle the following fields:
     * Dublin Core
-      * contributor
+      * <del>contributor</del>
       * coverage (Not applicable?)
       * <del>format</del> (length)
       * language
@@ -31,14 +31,14 @@ TODO: Write usage instructions here
 * Wikipedia Parser
   * Wikipedia Parser still needs to handle the following fields:
     * Dublin Core
-      * contributor
+      * <del>contributor</del>
       * coverage
       * <del>format</del> (length)
       * language
       * <del>publisher</del>
       * <del>relation</del>
       * <del>rights</del>
-      * source
+      * <del>source</del>
       * <del>subject</del>
 * Media Types that still need to be considered:
   * Television
