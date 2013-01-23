@@ -47,7 +47,7 @@ module Hipster
           # Mandatory
           :title => title,
           :type => 'video',
-          :image => nil,
+          :image => image,
           :url => @url,
           # Optional
           :site_name => 'IMDb',
@@ -111,6 +111,15 @@ module Hipster
           h4.parent.children.css('a').select {|a| a['href'] =~ /\/genre\/.+/ }.map {|a| a.text.strip }
         else
           []
+        end
+      end
+      
+      def image
+        img = @html.css('img[itemprop="image"]').first
+        if img
+          img['src']
+        else
+          ''
         end
       end
       

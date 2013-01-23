@@ -80,6 +80,10 @@ describe Hipster::Parser::IMDb do
   it "should return the top keywords and genres for subject (DC only)" do
     @dc.subject.sort.should == ["Slave", "Plantation", "Bounty Hunter", "Dentist", "Rescue", "Action", "Drama", "Western"].sort
   end
+  
+  it "should have an image (OG only)" do
+    @og.image.should_not be_empty
+  end
 
 end
 

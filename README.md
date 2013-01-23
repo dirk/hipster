@@ -11,7 +11,7 @@ TODO: Write usage instructions here
 
 * IMDB Parser
   * IMDB Parser still needs to handle the following fields:
-    * DublinCore
+    * Dublin Core
       * contributor
       * coverage (Not applicable?)
       * <del>format</del> (length)
@@ -19,10 +19,10 @@ TODO: Write usage instructions here
       * <del>publisher</del>
       * <del>relation</del>
       * <del>rights</del>
-      * source
+      * <del>source</del>
       * <del>subject</del>
     * Open Graph
-      * image
+      * <del>image</del>
     * Misc:
     	* Actors (key/value pair of Actor Name => Roles)
     	* Episodes (for television series). Do We break these down by season, or just list them all as a giant array?
@@ -31,15 +31,16 @@ TODO: Write usage instructions here
   * Maybe used their JSON API? https://github.com/richardasaurus/imdb-pie
 * Wikipedia Parser
 	* Wikipedia Parser still needs to handle the following fields:
-		* contributor
-		* coverage
-		* format
-		* language
-		* publisher
-		* relation
-		* rights
-		* source
-		* subject
+    * Dublin Core
+  		* contributor
+  		* coverage
+  		* format
+  		* language
+  		* publisher
+  		* relation
+  		* rights
+  		* source
+  		* subject
 * Media Types that still need to be considered:
 	* Television
 		* Need to determine what to do about television episodes
