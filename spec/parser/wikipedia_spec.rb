@@ -54,6 +54,18 @@ describe Hipster::Parser::Wikipedia do
     it "should have an image" do
       @og.image.should_not be_nil
     end
+    it "should have the right publisher. Note that this is the first credited production company (DC only)" do
+      @dc.publisher.should == "The Weinstein Company"
+    end
+    it "should have the right relation, which is the Wikipedia page slug (DC only)" do
+      @dc.relation.should == "Django_Unchained"
+    end
+    it "should have categories as the subject (DC only)" do
+      @dc.subject.should_not be_empty
+    end
+    it "should have the length in minutes (format in DC, duration in OG)" do
+      @dc.format.should == 165
+    end
     
   end#context movie
   

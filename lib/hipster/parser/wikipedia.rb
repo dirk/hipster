@@ -34,6 +34,10 @@ module Hipster
           :identifier => @url,
           :source => @url,
           :rights => 'http://wikimediafoundation.org/wiki/Terms_of_Use',
+          :publisher => publisher,
+          :relation => wikipedia_id,
+          :subject => categories,
+          :format => duration,
           :meta => {
             :parser => :wikipedia
           }
@@ -108,6 +112,43 @@ module Hipster
           return 'http:' + url
         end
         return url
+      end
+      
+      def publisher
+        if opts[:hint] == :movie
+          distributed_by = @html.css('#mw-content-text table.infobox tr th').select {|th| th.text.strip == 'Distributed by' }.first
+          if distributed_by
+            next_el = distributed_by.next_element
+            if next_el
+              a = next_el.css('a').first
+              if a
+                return a.text
+              end
+            end
+          end
+          return nil
+        else
+          nil
+        end
+      end
+      
+      def duration
+        running_time = @html.css('#mw-content-text table.infobox tr th').select {|th| th.text.strip == 'Running time' }.first
+        if running_time
+          next_el = running_time.next_element
+          if next_el && !next_el.children.empty?
+            return next_el.children.first.text.scan(/[1-9][0-9]+/).first.to_i
+          end
+        end
+        nil
+      end
+      
+      def wikipedia_id
+        @url.scan(/\/wiki\/([^?]+)/).to_s
+      end
+      
+      def categories
+        @html.css('#mw-normal-catlinks:not(.mw-hidden-cats-hidden) ul li a').map {|a| a.text }
       end
       
     end

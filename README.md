@@ -6,7 +6,6 @@ Hipster extracts interesting metadata from URLs. It knew about that website befo
 
 TODO: Write usage instructions here
 
-
 ## Items to Complete:
 
 * IMDB Parser
@@ -30,23 +29,23 @@ TODO: Write usage instructions here
 	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
   * Maybe used their JSON API? https://github.com/richardasaurus/imdb-pie
 * Wikipedia Parser
-	* Wikipedia Parser still needs to handle the following fields:
+  * Wikipedia Parser still needs to handle the following fields:
     * Dublin Core
-  		* contributor
-  		* coverage
-  		* format
-  		* language
-  		* publisher
-  		* relation
-  		* rights
-  		* source
-  		* subject
+      * contributor
+      * coverage
+      * <del>format</del> (length)
+      * language
+      * <del>publisher</del>
+      * <del>relation</del>
+      * <del>rights</del>
+      * source
+      * <del>subject</del>
 * Media Types that still need to be considered:
-	* Television
-		* Need to determine what to do about television episodes
-	* Books
-	* Music
-	* Videogames (MobyGames?)
+  * Television
+    * Need to determine what to do about television episodes
+  * Books
+  * Music
+  * Videogames (MobyGames?)
 * Write more test cases (different types of media/titles)
 * Double check our metadata types. I think OG is lacking some of the more detailed ones.
 
