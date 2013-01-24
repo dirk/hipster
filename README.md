@@ -28,8 +28,8 @@ TODO: Write usage instructions here
     		* URL to start with: http://www.imdb.com/title/tt0436992/episodes
 	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
   * Maybe used their JSON API? https://github.com/richardasaurus/imdb-pie
-* Wikipedia Parser
-  * Wikipedia Parser still needs to handle the following fields:
+* Wikipedia :movie Parser
+  * Still needs to handle the following fields:
     * Dublin Core
       * <del>contributor</del>
       * coverage

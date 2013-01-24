@@ -7,6 +7,7 @@ require 'hipster/object/dublin_core'
 require 'hipster/object/open_graph'
 require 'hipster/parser/base'
 require 'hipster/parser/imdb'
+require 'hipster/parser/imdb/movie'
 require 'hipster/parser/wikipedia'
 
 

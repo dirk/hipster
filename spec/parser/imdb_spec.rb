@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Hipster::Parser::IMDb do
+describe Hipster::Parser::IMDb::Movie do
   before :all do
     # Django Unchained :P
     @movie_url = 'http://www.imdb.com/title/tt1853728/'
@@ -11,7 +11,7 @@ describe Hipster::Parser::IMDb do
     ))
     movie_data = File.read(movie_data_file)
     # @parser = Hipster::Parser::IMDb.new(@movie_url)
-    @parser = Hipster::Parser::IMDb.new_from_data(
+    @parser = Hipster::Parser::IMDb::Movie.new_from_data(
       @movie_url,
       movie_data
     )
