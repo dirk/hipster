@@ -6,10 +6,10 @@ Hipster extracts interesting metadata from URLs. It knew about that website befo
 
 TODO: Write usage instructions here
 
-## Items to Complete:
+## Items to Complete
 
-* IMDB Parser
-  * IMDB Parser still needs to handle the following fields:
+* IMDB Module
+  * Movie Parser
     * Dublin Core
       * <del>contributor</del>
       * coverage (Not applicable?)
@@ -22,11 +22,11 @@ TODO: Write usage instructions here
       * <del>subject</del>
     * Open Graph
       * <del>image</del>
-    * Misc:
-    	* Actors (key/value pair of Actor Name => Roles)
-    	* Episodes (for television series). Do We break these down by season, or just list them all as a giant array?
-    		* URL to start with: http://www.imdb.com/title/tt0436992/episodes
-	* IMBD also stores information about games and television shows. Our parser should try to detect the differences.
+  * Actors Parser
+  * TV Series/Show Parser (Include method for fetching episodes?)
+  * Episodes Parser (for television series)
+    * Example URL: http://www.imdb.com/title/tt0436992/episodes
+	* Video Game Parser
   * Maybe used their JSON API? https://github.com/richardasaurus/imdb-pie
 * Wikipedia :movie Parser
   * Still needs to handle the following fields:
@@ -48,6 +48,7 @@ TODO: Write usage instructions here
   * Videogames (MobyGames?)
 * Write more test cases (different types of media/titles)
 * Double check our metadata types. I think OG is lacking some of the more detailed ones.
+* Migrate Wikipedia parser into module/parser layout like IMDb.
 
 ## Contributing
 
