@@ -9,6 +9,7 @@ require 'hipster/parser/base'
 require 'hipster/parser/imdb'
 require 'hipster/parser/imdb/movie'
 require 'hipster/parser/wikipedia'
+require 'hipster/parser/wikipedia/movie'
 
 
 module Hipster
