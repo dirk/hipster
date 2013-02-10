@@ -8,9 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Hipster::VERSION
   gem.authors       = ["Dirk Gadsden", "Thomas Cannon"]
   gem.email         = ["dirk@esherido.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "Meta-data fetching before it was cool"
+  gem.homepage      = "https://github.com/dirk/hipster"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
