@@ -10,7 +10,7 @@ require 'hipster/parser/imdb'
 require 'hipster/parser/imdb/movie'
 require 'hipster/parser/wikipedia'
 require 'hipster/parser/wikipedia/movie'
-
+require 'hipster/frontend'
 
 module Hipster
   # Your code goes here...
