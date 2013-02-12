@@ -4,12 +4,13 @@ module Hipster
     module Wikipedia
       
       class Movie < ::Hipster::Parser::Base
+        # TODO: Remove :hint
         DEFAULT_OPTIONS = {
           :hint => nil
         }
         attr_accessor :html, :opts
-      
-        def initialize(url, _opts = {})
+        # TODO: Remove :hint
+        def initialize(url, _opts = {:hint => :movie})
           super(url)
           @response = nil
           @html = nil
@@ -69,6 +70,7 @@ module Hipster
         end
       
         def dc_type
+          # TODO: Remove :hint
           if opts[:hint] == :movie
             'movie'
           else
@@ -76,6 +78,7 @@ module Hipster
           end
         end
         def og_type
+          # TODO: Remove :hint
           if opts[:hint] == :movie
             'video'
           else
@@ -84,6 +87,7 @@ module Hipster
         end
       
         def creator
+          # TODO: Remove :hint
           if opts[:hint] == :movie
             directed_by = @html.css('#mw-content-text table.infobox tr th').select {|th| th.text.strip == 'Directed by' }.first
             if directed_by
